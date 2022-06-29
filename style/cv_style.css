@@ -1,0 +1,149 @@
+
+* { 
+  word-break: keep-all;
+  -webkit-tap-highlight-color: transparent;
+  list-style: none;
+}
+
+*:focus {
+outline: none;
+}
+
+/* Menu button */
+#webapp_cover {
+  width: 39px;
+  margin: 0 auto;
+  transform: translateY(0) scale(1);
+}
+
+#menu_button {
+  width: 39x;
+}
+
+#menu_label {
+  position: relative;
+  display: block;
+  height: 29px;
+  cursor: pointer;
+}
+
+#menu_label:before,
+#menu_label:after,
+#menu_text_bar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  transition: 1s;
+}
+
+#menu_label:before,
+#menu_label:after {
+  content: "";
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) left;
+  background-color: #000;
+}
+
+#menu_label:before {
+  top: 0;
+}
+
+#menu_label:after {
+  top: 12px;
+}
+
+#menu_text_bar {
+  top: 24px;
+}
+
+#menu_text_bar:before {
+  content: "닫기";
+  position: absolute;
+  top: 5px;
+  right: 0;
+  left: 0;
+  font-size: 12px;
+  text-align: center;
+}
+
+#menu_checkbox:checked + #menu_label:before {
+  left: -39px;
+}
+
+#menu_checkbox:checked + #menu_label:after {
+  left: 39px;
+}
+
+#menu_checkbox:checked + #menu_label #menu_text_bar:before {
+  animation: moveUpThenDown 0.8s ease 0.2s forwards,
+    shakeWhileMovingUp 0.8s ease 0.2s forwards,
+    shakeWhileMovingDown 0.2s ease 0.8s forwards;
+}
+
+@keyframes moveUpThenDown {
+  0% { top: 0; }
+  50% { top: -28px; }
+  100% { top: -18px; }
+}
+
+@keyframes shakeWhileMovingUp {
+  0% { transform: rotateZ(0); }
+  25% { transform: rotateZ(-10deg); }
+  50% { transform: rotateZ(0deg); }
+  75% { transform: rotateZ(10deg); }
+  100% { transform: rotateZ(0); }
+}
+
+@keyframes shakeWhileMovingDown {
+  0% { transform: rotateZ(0); }
+  80% { transform: rotateZ(3deg); }
+  90% { transform: rotateZ(-3deg); }
+  100% { transform: rotateZ(0); }
+}
+/* // Menu Button*/
+
+
+
+/* Menu List */
+ul li a {
+  position: relative;
+  display:block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 4em;
+  color: #fff;
+  transition: 0.5s;
+}
+
+ul li a:hover {
+  color: rgba(255,255,255,0.1);
+  transform: translateY(-20px);
+  transition-delay: 0;
+}
+
+ul li a::before {
+  content: attr(data-text);
+  position: absolute;
+  bottom: -8px;
+  left: 6px;
+  pointer-events: none;
+  z-index: 1;
+  font-size: 0.35em;
+  color: #3bffe8;
+  font-weight: 500;
+  letter-spacing: 100px;
+  opacity:0;
+  transition: 0.5s;
+  text-shadow: 0 0 10px #3bffe8,
+  0 0 30px #3bffe8,
+  0 0 80px #3bffe8;
+}
+
+ul li a:hover::before {
+  letter-spacing: 6px;
+  opacity: 1;
+  transition-delay: 0.25s;
+}
+
+/* // Menu List */

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/f4d52d82bf.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../style/cv_style.css">
+  <title>Portfolio</title>
+</head>
+<body class="">
+  
+
+  <div class="overflow-hidden">
+
+    <!-- Menu -->
+    <nav id="nav" class="fixed w-screen h-screen overflow-hidden top-0 -z-10 flex justify-center items-center bg-zinc-900 ease-out duration-300 opacity-0">
+      <ul class="relative flex flex-col">
+        <li><a class="list" href="#" data-text="이력서 처음으로 돌아가기">Home</a>
+          <li><a class="list" href="../pages/cssIndex.html" data-text="CSS로 만든 미니 페이지들">CSS Design</a>
+        <li><a class="list" href="../pages/jsIndex.html" data-text="JavaScript로 만든 미니 게임들">JavaScript Games</a>
+        <li><a class="list" href="../index.html#portfolio" data-text="포트폴리오 페이지로">Portfolio</a>
+        <li><a class="list" href="../index.html#contact" data-text="연락이 필요하다면">Contact</a>
+      </ul>
+    </nav>
+    <!-- // Menu -->
+
+
+
+    <!-- menu button -->
+    <div id="menuButtonWrap" class="hidden sm:block sm:fixed z-50 sm:top-8 sm:right-14">
+      <div id="webapp_cover" class="absolute top-2 right-0">
+        <div id="menu_button" class="overflow-hidden">
+          <input type="checkbox" id="menu_checkbox" class="hidden">
+          <label for="menu_checkbox" id="menu_label">
+            <div id="menu_text_bar" class="bg-black before:text-black before:font-extrabold before:text-center"></div>
+          </label>
+        </div>
+      </div>
+    </div>
+    <!-- // menu button -->
+
+  </div>
+
+
+<!-- HEADER -->
+<div class="container mx-auto mt-8 mb-8 sm:pr-16">
+
+  
+  <div class="mx-8 text break-words">
+    <div>
+      <h2 class="text-4xl mt-28">전덕진</h2>
+    </div>
+
+    <div class="mt-8 mb-4">
+      <p class="text-xl"><i class="fa-solid fa-phone"></i> 연락처: <span class="hover:text-red-700 tel_button cursor-pointer">010-9449-0094</span></p>
+      <p class="text-xl"><i class="fa-regular fa-envelope"></i> 이메일: <a class="hover:text-red-700" href="mailto:bicute@naver.com">bicute@naver.com</a></p>
+      <p class="text-xl"><i class="fa-solid fa-rss"></i> 블로그: <a class="hover:text-red-700" href="https://bicute.net">https://bicute.net</a></p>
+    </div>
+
+    <!-- Modal -->
+    <div class="relative -z-10 ease-out duration-300 opacity-0" id="tel_modal" aria-labelledby="modal-title" role="dialog"
+      aria-modal="true">
+      <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+      <div class="fixed z-10 inset-0 overflow-y-auto">
+        <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
+
+          <div class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full">
+            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+              <div class="sm:flex sm:items-start">
+                <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+
+                  <svg class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                </div>
+                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                  <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">전화는 직접 걸어주세요</h3>
+                  <div class="mt-2">
+                    <p class="text-sm text-gray-500">그냥 눌러봤는데 진짜로 전화가 걸리면 당황하실까봐 막아놨습니다.<br>마음에 드신다면 직접 연락주세요!<br>감사합니다 (__)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+              <button type="button" id='tel_colse'
+                class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">확인</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- // Modal -->
+
+
+    <div>
+      <p class="text-lg">• 안녕하세요! 신입 프론트앤드 개발자 전덕진입니다.</p>
+      <p class="text-lg">• 개발자가 되기 전부터 몰입하는 즐거움을 따라 살다가, 지금은 개발에 푹 빠져 있습니다.</p>
+      <p class="text-lg">• 무엇보다 꾸준함의 가치를 알기에 새로운 지식의 습득과 익힌 내용을 정리하기 위한 기술 블로그를 운영 하고 있습니다.</p>
+    </div>
+
+  </div>
+</div>
+<!-- // HEADER -->
+
+
+                                <hr class="container mx-auto mt-8 mb-8">
+
+
+<!-- #Section - SKILL  -->
+<section class="container flex flex-col sm:flex-row mx-auto break-keep sm:pr-14">
+  <!-- Left Box -->
+  <div class="w-full sm:w-1/5 h-100% text-xl sm:text-center font-semibold sm:self-start sticky top-9 mb-16 ml-8 sm:ml-0">스킬</div>
+  <!-- Right Box -->
+  <div class="sm:w-4/5 flex flex-col mr-8 ml-28 sm:ml-0">
+    <!-- 1. -->
+    <div class="flex justify-between mb-4">
+        <div class="text-2xl font-bold">Frontend</div>
+    </div>
+
+    <div>
+      <div class="mb-4 text-lg">
+        <p class="font-bold">• HTML5</p>
+        <p class="font-bold">• CSS(SCSS)</p>
+        <p class="font-bold">• JavaScript(ES6)</p>
+        <p class="font-bold">• React</p>
+      </div>
+    </div>
+
+                                <hr class="mt-8 mb-8">
+
+    <!-- 2. -->
+    <div class="flex justify-between mb-4">
+      <div class="text-2xl font-bold">Backend</div>
+    </div>
+    
+    <div>
+      <div class="mb-4 text-lg">
+        <p class="font-bold">• Node.js</p>
+        <p class="font-bold">• MongoDB Atlas</p>
+        <p class="font-bold">• Firebase</p>
+      </div>
+    </div>
+
+                                <hr class="mt-8 mb-8">
+
+    <!-- 3. -->
+    <div class="flex justify-between mb-4">
+      <div class="text-2xl font-bold">Framework & Library</div>
+    </div>
+    
+    <div>
+      <div class="mb-4 text-lg">
+        <p class="font-bold">• Bootstrap</p>
+        <p class="font-bold">• Tailwind CSS</p>
+        <p class="font-bold">• jQuery</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+                              <hr class="container mx-auto mt-8 mb-8">
+
+
+<!-- #Section - 교육  -->
+<section class="container flex flex-col sm:flex-row mx-auto break-keep sm:pr-16">
+
+  <!-- Left Box -->
+  <div id="Experience" class="w-full sm:w-1/5 h-100% text-xl sm:text-center font-semibold sm:self-start sticky top-9 mb-16 ml-8 sm:ml-0">교육</div>
+  <!-- Right Box -->
+  <div class="sm:w-4/5 flex flex-col mr-8 ml-28 sm:ml-0">
+    <!-- 1. -->
+    <div class="flex flex-col lg:flex-row lg:justify-between mb-4">
+      <div class="sm:flex sm:flex-col">
+        <div class="text-2xl font-bold">국가기간•전략산업직종 훈련 과정 수료 </div>
+      </div>
+      <div class="text-sm lg:text-base lg:w-2/6 lg:text-right text-gray-400">2021.12.27 ~ 2022.07.21</div>
+    </div>
+
+    <div>
+      <div class="mb-4 text-lg">
+        <p class="font-bold">• 영진직업전문학교 [K-Digital Training]</p>
+        <p class="ml-3">Open API를 활용한 스마트 웹&앱 콘텐츠 실무 개발자 양성과정</p>
+      </div>
+    </div>
+
+                                <hr class="mt-8 mb-8">
+    <!-- 2. -->
+    <div class="flex flex-col lg:flex-row lg:justify-between mb-4">
+      <div class="sm:flex sm:flex-col">
+        <div class="text-2xl font-bold">경동정보대학 졸업</div>
+      </div>
+      <div class="text-sm lg:text-base lg:w-2/6 lg:text-right text-gray-400">2002.02.28 ~ 2004.01.31</div>
+    </div>
+
+    <div>
+      <div class="mb-4 text-lg">
+        <p class="font-bold">• 인터넷 IT 계열 웹마스터 전공</p>
+        <p class="ml-3">공업전문학사</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+                              <hr class="container mx-auto mt-8 mb-8">
+
+<!-- #Section - 경력  -->
+<section class="container flex flex-col sm:flex-row mx-auto break-keep sm:pr-16">
+
+  <!-- Left Box -->
+  <div id="Experience" class="w-full sm:w-1/5 h-100% text-xl sm:text-center font-semibold sm:self-start sticky top-9 mb-16 ml-8 sm:ml-0">경력</div>
+  <!-- Right Box -->
+  <div class="sm:w-4/5 flex flex-col mr-8 ml-28 sm:ml-0">
+
+    <!-- 2. -->
+    <div class="flex flex-col lg:flex-row lg:justify-between mb-4">
+      <div class="sm:flex sm:flex-col">
+        <div class="text-2xl font-bold">GPS인증 하이브리드 앱 콘텐츠 개발</div>
+      </div>
+      <div class="text-sm lg:text-base lg:w-2/6 lg:text-right text-gray-400">2022.05.26 ~ 2022.06.22</div>
+    </div>
+
+    <div>
+      <div class="mb-4 text-lg">
+        <p class="font-bold">• 고래문화특구 장생포를 배경으로 GPS를 이용한 콘텐츠를 기획</p>
+        <p class="ml-3">1)  각 지역을 돌아보며 QR코드를 스캔하여 스탬프를 모으면서 다양한 역사적 배경 지식을 알리고, 추가적인 지역발전을 도모하는 목표로 기획</p>
+        <p class="ml-3">2) 코스 소개, QR 인증, 스탬프 체크, 팝업 등 JavaScript가 사용된 모든 영역을 담당</p>
+      </div>
+    </div>
+
+                    <hr class="mt-8 mb-8">
+
+    <!-- 1. -->
+    <div class="flex flex-col lg:flex-row lg:justify-between mb-4">
+      <div class="sm:flex sm:flex-col">
+        <div class="text-2xl font-bold">SNS 마케팅 자동화 스마트 웹앱 구현</div>
+      </div>
+      <div class="text-sm lg:text-base lg:w-2/6 lg:text-right text-gray-400">2022.04.14 ~ 2022.05.30</div>
+    </div>
+
+    <div>
+      <div class="mb-4 text-lg">
+        <p class="font-bold">• 카카오톡 알림톡을 이용한 마케팅 목적의 랜딩 페이지 제작</p>
+        <p class="ml-3">1) 대구에 위치하고 있는 독립서점 [고스트 북스]를 대상으로 카카오 알림톡 API를 이용한 마케팅 자동화 서비스 프로젝트</p>
+        <p class="ml-3">2) 프로젝트 기획 및 피드백, 기술 서포트, 웹페이지 최적화 검증 담당</p>
+        <p class="ml-3">3) 영진전문대학 주최. 디지털 신기술 분야 경진대회 금상 수상</p>
+      </div>
+    </div>
+
+                                <hr class="mt-8 mb-8">
+
+
+
+  <!-- 3. -->
+  <div class="flex flex-col lg:flex-row lg:justify-between mb-4">
+    <div class="sm:flex sm:flex-col">
+      <div class="text-2xl font-bold">Open API를 활용한 SNS 마케팅 자동화 스마트 웹앱 구현</div>
+    </div>
+    <div class="text-sm lg:text-base lg:w-2/6 lg:text-right text-gray-400">2022.04.14 ~ 2022.05.30</div>
+  </div>
+
+  <div>
+    <div class="mb-4 text-lg">
+      <p class="font-bold">• 카카오톡 알림톡을 이용한 마케팅 목적의 랜딩 페이지 제작.</p>
+      <p class="ml-3">1) 대구에 위치하고 있는 독립서점 [고스트 북스]를 대상으로 카카오 알림톡 API를 이용하여 마케팅을 진행하는 프로젝트</p>
+      <p class="ml-3">2) 프로젝트 기획 및 피드백, 기술 서포트, 웹페이지 최적화 검증 담당</p>
+      <p class="ml-3">3) 영진전문대학 주최. 디지털 신기술 분야 경진대회 금상 수상</p>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+
+                              <hr class="container mx-auto mt-8 mb-8">
+
+
+<!-- #Section - 비개발 -->
+<section class="container flex flex-col sm:flex-row mx-auto break-keep sm:pr-16">
+  <!-- Left Box -->
+  <div class="w-full sm:w-1/5 h-100% text-xl sm:text-center font-semibold sm:self-start sticky top-9 mb-16 ml-8 sm:ml-0">비개발</div>
+  <!-- Right Box -->
+  <div class="sm:w-4/5 flex flex-col mr-8 ml-28 sm:ml-0">
+
+    <!-- 1. -->
+    <div class="flex flex-col lg:flex-row lg:justify-between mb-4">
+      <div class="sm:flex sm:flex-col">
+        <div class="text-2xl font-bold">(주)피치벨리 - 애플 공식 리셀러</div>
+        <div class="text-xl">직위: 과장 / 직책: 점장</div>
+      </div>
+      <div class="text-sm lg:text-base text-gray-400">2016.03.01 ~ 2021.09.20</div>
+    </div>
+
+    <div>
+      <div class="mb-4 text-lg">
+        <p class="font-bold">• 월 매출 3,000만원에서 1억 8000만원까지</p>
+        <p class="ml-3">입사 후 폐점 위기였던 매장을 담당하게 되었지만, 타 지점의 오래된 재고, 판매가 힘든 재고들을 이용하여 행사 매출과 단골 확보의 기회로 활용</p>
+        <p class="ml-3">각 부서의 담당자들에게 계속해서 연락을 하며 단독 이벤트를 진행</p>
+      </div>
+      <div class="mb-4 text-lg">
+        <p class="font-bold">• Apple Premium Reseller </p>
+        <p class="ml-3">Apple로부터 Apple 해결 방법, 서비스 및 지원 위주로 우수한 고객 서비스를 제공하고 있다는 점을 인정받음</p>
+      </div>
+    </div>
+
+                                <hr class="mt-8 mb-8">
+
+    <!-- 2. -->
+    <div class="flex flex-col lg:flex-row lg:justify-between mb-4">
+      <div class="sm:flex sm:flex-col">
+        <div class="text-2xl font-bold">GL테크 - 넷마블/블리자드 PC방 사업부</div>
+        <div class="text-xl">직위: 대리 / 대구 경북지역 PC방 영업</div>
+      </div>
+      <div class="text-sm lg:text-base text-gray-400">2013.05.01 ~ 2016.02.28</div>
+    </div>
+
+    <div>
+      <div class="mb-4 text-lg">
+        <p class="font-bold">• 신규 PC방 가맹 영업 및 이벤트 유치</p>
+        <!-- <p> </p> -->
+      </div>
+    </div>
+
+                              <hr class="mt-8 mb-8">
+
+    <!-- 3. -->
+    <div class="flex flex-col lg:flex-row lg:justify-between mb-4">
+      <div class="sm:flex sm:flex-col">
+        <div class="text-2xl font-bold">대성정보 - HP 마트 사업부</div>
+        <div class="text-xl">직위: 과장 / 대구 경북지역 매장 관리 및 판매</div>
+      </div>
+      <div class="text-sm lg:text-base text-gray-400">2009.07.01 ~ 2012.06.30</div>
+    </div>
+
+    <div>
+      <div class="mb-4 text-lg">
+        <p class="font-bold">• 홈플러스 대구 경북지역 매출 2년 연속 1등 유지</p>
+        <p class="ml-3">삼성 / 엘지 / 이웍스(삼보, SONY 외)와의 매출 경쟁 2년 연속 1등 유지 (연장 근무, 휴일 출근 포함)</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+                              <hr class="container mx-auto mt-8 mb-8">
+
+
+  <section class="container flex flex-col sm:flex-row mx-auto break-keep sm:pr-16">
+    <!-- Left Box -->
+    <div class="w-full sm:w-1/5 h-100% text-xl sm:text-center font-semibold sm:self-start sticky top-9 mb-16 ml-8 sm:ml-0">수상</div>
+    <!-- Right Box -->
+    <div class="sm:w-4/5 flex flex-col mr-8 ml-28 sm:ml-0">
+  
+      <!-- 1. -->
+      <div class="flex flex-col lg:flex-row lg:justify-between mb-4">
+        <div class="sm:flex sm:flex-col">
+          <div class="text-2xl font-bold">[금상] 디지털 신기술 분야 경진대회</div>
+          <div class="text-xl"></div>
+        </div>
+        <div class="text-sm lg:text-base text-gray-400">2022.05.31</div>
+      </div>
+  
+      <div>
+        <div class="mb-4 text-lg">
+          <p>• 영진전문대학교 컴퓨터정보계열 주관 2022 디지털 혁신공유대학사업 Open API활용 경진대회</p>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+
+
+
+
+
+                              <hr class="container mx-auto mt-8 mb-8">
+
+  <!-- LightWidget WIDGET -->
+  <section class="container mx-auto">
+    <iframe
+    src="http://lightwidget.com/widgets/6bbda991b0a55cbbb326380859f344a7.html" scrolling="no" allowtransparency="true"
+    class="lightwidget-widget" style="width:100%; border:0; overflow:hidden;"></iframe>
+  </section>
+  
+  
+  <hr class="mt-8 mb-8">
+  
+  
+  <footer class="container mx-auto">
+    <div class="flex justify-center items-center mb-8">
+      Copyright © 2022 BiCute.
+    </div>
+  </footer>
+  
+  <!-- insta lightwidget -->
+  <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+  <script src="../js/cv_main.js"></script>
+
+</body>
+</html>

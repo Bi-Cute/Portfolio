@@ -1,6 +1,11 @@
+
+
+
 /* ===== typing animation ===== */
 let typed = new Typed(".typing", {
-  strings: ["", "Web Designer", "Web Developer", "Graphic Designer", "YouTuber", "Bloger"],
+  strings: ["", "HTML", "CSS", "JavaScript", "React", "TailwindCSS", "Blog",
+    "Animation", "AdobeXD", "Affinity Photo"
+],
   typeSpeed: 100,
   BackSpeed: 60,
   loop: true
@@ -97,29 +102,32 @@ function asideSectionTogglerBtn()
 // 
 
 /* ===== MIXITUP FILTER PORTFOLIO ===== */
-let mixer = mixitup('.work__container', {
+
+let mixer = mixitup('.portfolio__container', {
   selectors: {
-      target: '.work__card'
+      target: '.portfolio__card'
   },
   animation: {
       duration: 300
   }
 });
 
-/* ===== Link Active Work ===== */
-const linkWork = document.querySelectorAll('.work__item');
+/* ===== Link Active Portfolio ===== */
 
-function activeWork() { 
-  linkWork.forEach(l => l.classList.remove('active-work'))
-  this.classList.add('active-work')
+// Portfolio
+const $$portfolioItem = document.querySelectorAll('.portfolio__item');
+
+function activePortfolio() { 
+  $$portfolioItem.forEach(l => l.classList.remove('active-portfolio'))
+  this.classList.add('active-portfolio')
 }
 
-linkWork.forEach(l => l.addEventListener("click", activeWork)) 
+$$portfolioItem.forEach(l => l.addEventListener("click", activePortfolio)) 
 
 
-/* ===== Work Popup ===== */
+/* ===== Portfolio Popup ===== */
 document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("work__button")) {
+  if (e.target.classList.contains("portfolio__button")) {
     togglePortfolioPopup();
     portfolioItemDetails(e.target.parentElement);
   }
@@ -133,9 +141,10 @@ document.querySelector(".portfolio__popup-close").addEventListener("click", togg
 
 function portfolioItemDetails(portfolioItem) {
   // console.log(portfolioItem)
-  document.querySelector(".pp__thumbnail img").src = portfolioItem.querySelector(".work__img").src;
-  document.querySelector(".portfolio__popup-subtitle span").innerHTML = portfolio.querySelector("work__title").innerHTML;
-  document.querySelector(".portfolio__popup-body").innerHTML = portfolio.querySelector("portfolio__item-details").innerHTML;
+  document.querySelector(".pp__thumbnail img").src = portfolioItem.querySelector(".portfolio__img").src;
+  document.querySelector(".portfolio__popup-subtitle span").innerHTML = portfolioItem.querySelector(".portfolio__subtitle").innerHTML;
+  document.querySelector(".portfolio__popup-title").innerHTML = portfolioItem.querySelector(".portfolio__title").innerHTML;
+  document.querySelector(".portfolio__popup-body").innerHTML = portfolioItem.querySelector(".portfolio__item-details").innerHTML;
   
 }
 
@@ -163,6 +172,4 @@ window.onload = function () {
   });
 }
 
-
-
-
+  

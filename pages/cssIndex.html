@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/f4d52d82bf.js" crossorigin="anonymous"></script>
+  <title>BiCute CSS</title>
+</head>
+
+<style>
+
+/* Loading */
+#preloader.active {
+  transform: translateY(-100vh);
+  transition: ease-in-out 2s;
+  transition-delay: 1s;
+}
+
+#counter.hide {
+  opacity: 0;
+  transition: 1s;
+  pointer-events: none;
+}
+/* // Loading */
+
+
+/* Card CSS */
+.card {
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  border-left: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(5px);
+}
+/* // Card CSS */
+
+</style>
+
+
+
+<body class="bg-zinc-900 p-12">
+
+  <div id="preloader" class="fixed top-0 left-0 flex justify-center items-center w-full h-screen z-30 bg-gradient-to-br from-zinc-900 via-zinc-800 to-blue-700 before:content-['Loading'] before:absolute before:text-9xl before:font-extrabold before:uppercase before:text-black before:opacity-20">
+    <div id="counter" class="relative text-white text-[12em] font-semibold z-10 after:content-['%'] after:text-4xl">0</div>
+  </div>
+
+
+
+<script>
+  function counter(){
+    let count = setInterval(function(){
+      let c = parseInt(document.getElementById('counter').innerText);
+      document.getElementById('counter').innerText = ++c;
+      if(c == 100) {
+        clearInterval(count);
+        console.log(document.getElementById('counter').innerText)
+        document.getElementById('counter').classList.add('hide');
+        setTimeout(function(){
+          document.getElementById('preloader').classList.replace("before:content-['Loading']","before:content-['Complete']");
+        },1000);        
+        setTimeout(function(){
+          document.getElementById('preloader').classList.add('active');
+        },500);
+      }
+    },8)
+    
+  }
+  counter();
+</script>
+
+<style>
+
+.shooting_star span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.1),
+  0 0 0 8px rgba(255,255,255,0.1),
+  0 0 20px rgba(255,255,255,1);
+  animation: star_animate 3s linear infinite;
+}
+
+.shooting_star span::before {
+content: '';
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+width: 300px;
+height: 1px;
+background:linear-gradient(90deg, #fff, transparent)
+}
+
+@keyframes star_animate  {
+  0% { transform: rotate(315deg) translateX(0); opacity: 1; }  
+  70% { opacity: 1; }  
+  100% { transform: rotate(315deg) translateX(-1000px); opacity: 0; }  
+}
+
+.shooting_star span:nth-child(1) {
+  bottom:180px;
+  right: 0px;
+  animation-delay: 0;
+  animation-duration: 1s;
+}
+
+.shooting_star span:nth-child(2) {
+  bottom:100px;
+  right: 0px;
+  left:initial;
+  animation-delay: 0.2s;
+  animation-duration: 3s;
+}
+
+.shooting_star span:nth-child(3) {
+  bottom: 60px;
+  right: 0px;
+  left:initial;
+  animation-delay: 0.4s;
+  animation-duration: 2s;
+}
+
+/* 2 */
+.icon-box {
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  transition: 0.5s;
+}
+
+.icon-box i {
+  font-size: 100px;
+  color: #222;
+}
+
+.card:nth-child(2):hover .icon-box i {
+  transform: scale(0.95);
+  color: #fff;
+  text-shadow: 0 0 10px rgba(33, 156, 243, 1),
+              0 0 10px rgba(33, 156, 243, 0.5);
+} 
+
+/* 3 */
+#card3 i {
+  font-size: 100px;
+  color: transparent;
+}
+
+#card3:hover i {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(33, 156, 243, 1),
+              0 0 10px rgba(33, 156, 243, 0.5);
+}
+
+.light {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--x) var(--y), transparent 10%, rgba(0,0,0.7) 30% );
+}
+</style>
+
+
+  <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+    <!-- Card 1 -->
+    <div class="card container h-80 bg-red-600 bg-gradient-to-br from-zinc-900 via-zinc-800 to-blue-700 rounded-3xl overflow-hidden px-8 py-12">
+      <div class="flex h-full flex-col justify-between relative">
+        <div class="text-2xl font-bold text-white">유성우</div>
+        <div class="flex-1 mr-24 text-gray-400">CSS 애니메이션 바탕화면 시리즈</div>
+        <a class="text-blue-400" href="https://shooting-star.bicute.repl.co" target="_blank">Let's Show ></a>
+        <div class="shooting_star">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="card container h-80 bg-red-600 bg-gradient-to-br from-zinc-900 via-zinc-800 to-blue-700 rounded-3xl overflow-hidden px-8 py-12">
+      <div class="flex h-full flex-col justify-between relative">
+        <div class="text-2xl font-bold text-white">빛나는 버튼</div>
+        <div class="flex-1 mr-24 text-gray-400">CSS 버튼 아이콘</div>
+        <a class="text-blue-400" href="https://glow-button.bicute.repl.co" target="_blank">Let's Show ></a>
+        <div class="icon-box">
+          <i class="fa-solid fa-moon"></i>
+        </div>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div id="card3" class="card container h-80 bg-red-600 bg-gradient-to-br from-zinc-900 via-zinc-800 to-blue-700 rounded-3xl overflow-hidden relative px-8 py-12">
+      <div class="flex h-full flex-col justify-between relative">
+        <div class="text-2xl font-bold text-white">서치라이트</div>
+        <div class="flex-1 mr-24 text-gray-400">JavaScript는 양념만!<br>어이쿠, 양념을 쏟아버렸네...</div>
+        <div id='light-hidden-text' class="opacity-0 flex-1 mr-24 text-cyan-400 ease-in-out duration-1000">어라? 뭔가 변화가 생겼을지도...?</div>
+        <a class="text-blue-400" href="https://text-light.bicute.repl.co/" target="_blank">Let's Show ></a>
+        <div id="light-contents" class="absolute right-6 bottom-4">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+        </div>
+        
+      </div>
+      <div id="light" class="light"></div>
+    </div>
+  
+
+    <script>
+        let pos = document.documentElement;
+        let $card3 = document.getElementById('card3');
+        let $card3on = false;
+        let light = document.getElementById('light');
+        let $lightContents = document.getElementById('light-contents');
+        let lightContentsArr = 
+          ['<i class="fa-solid fa-bell"></i>', '<i class="fa-solid fa-cat"></i>', '<i class="fa-solid fa-chess-knight"></i>', '<i class="fa-solid fa-cloud-bolt"></i>'];
+        
+        
+
+        $card3.addEventListener('mouseover',function(){
+          $card3on = true;
+          light.classList.add('light')
+        })
+        
+        $card3.addEventListener('mouseleave',function(){
+          $card3on = false;
+          
+          
+        
+          light.classList.remove('light');
+          $lightContents.innerHTML = lightContentsArr[Math.floor(Math.random()*lightContentsArr.length)];
+          document.getElementById('light-hidden-text').classList.replace('opacity-0','opacity-100');
+
+          let hideTimer = setTimeout(() => {
+          document.getElementById('light-hidden-text').classList.replace('opacity-100','opacity-0');
+        }, 5000);
+        })
+
+        pos.addEventListener('mousemove', e => {
+          if($card3on == true){
+          
+          let innerX = window.innerWidth;
+          if(innerX >= 1537){
+          pos.style.setProperty('--x', e.clientX - (innerX-1536)/2 + 'px')
+          } else {
+            pos.style.setProperty('--x', e.clientX - 40 + 'px')
+          }
+
+          if(innerX <= 768){
+            pos.style.setProperty('--y', e.clientY - 440 - 360 + window.scrollY + 'px')
+          } else {
+            pos.style.setProperty('--y', e.clientY - 440 + window.scrollY + 'px')
+          }
+        } return;
+        })
+      </script>
+    <!-- Card 4 -->
+    <div class="card container h-80 bg-red-600 bg-gradient-to-br from-zinc-900 via-zinc-800 to-blue-700 rounded-3xl overflow-hidden px-8 py-12">
+      <div class="flex h-full flex-col justify-between relative">
+        <div class="text-2xl font-bold text-white">구름과 비</div>
+        <div class="flex-1 mr-24 text-gray-400">CSS 애니메이션 바탕화면 시리즈</div>
+        <a class="text-blue-400" href="https://rainy-cloud.bicute.repl.co" target="_blank">Let's Show ></a>
+        
+        <div class="absolute right-2 bottom-0 h-24 border-b-2 border-b-white">
+          <div class="cloud relative w-24 h-8 bg-white rounded-3xl top-2 before:absolute before:-top-4 before:left-3 before:w-8 before:h-8 before:bg-white before:rounded-full"></div>
+          <div class="rain relative flex ml-2 z-10">
+            <span style="--i:13" class="relative bottom-1 w-4 h-4 text-white mx-2">C</span>
+            <span style="--i:11" class="relative bottom-1 w-4 h-4 text-white mx-1">S</span>
+            <span style="--i:12" class="relative bottom-1 w-4 h-4 text-white mx-2">S</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <style>
+
+.cloud::before {
+  box-shadow: 27px 0 0 9px #fff;
+}
+
+.rain span {
+  animation: rain_animate 5s linear infinite;
+  animation-duration: calc(15s / var(--i));
+  transform-origin: bottom;
+}
+
+@keyframes rain_animate {
+  0% { transform: translateY(0) scale(1);}
+  70% { transform: translateY(48px) scale(1); }
+  100% { transform: translateY(48px) scale(0); }
+}
+    </style>
+
+    <!-- Card 5 -->
+    <div class="card container h-80 bg-red-600 bg-gradient-to-br from-zinc-900 via-zinc-800 to-blue-700 rounded-3xl overflow-hidden px-8 py-12">
+      <div class="flex h-full flex-col justify-between relative">
+        <div class="text-2xl font-bold text-white">anime.js</div>
+        <div class="flex-1 mr-24 text-gray-400">텍스트를 replace로 분리한 뒤 랜덤하게 돌리고 뿌려주기<br>.....어?<br>CSS가 아닌데???</div>
+        <a class="text-blue-400" href="https://textanime.bicute.repl.co" target="_blank">Let's Show ></a>
+        <div class="anime-text absolute w-24 text-white text-5xl leading-10 right-2 bottom-2">
+          風花雪月
+        </div>
+      </div>
+    </div>
+
+<style>
+  .anime-text span {
+  position: relative;
+  display: inline-block;
+}
+</style>
+
+
+<script src="../js/anime.min.js"></script>
+<script>
+  const $text = document.querySelector('.anime-text');
+  $text.innerHTML = $text.textContent.replace(/\S/g, "<span>$&</span>")
+
+  const animation = anime.timeline({
+    targets : '.anime-text span',
+    easing : 'easeInOutExpo',
+    loop : true,
+  })
+
+  animation
+    .add({
+    rotate: function(){
+      return anime.random(-360,360)
+    },
+    translateX : function(){
+      return anime.random(-150,150)
+    },
+    translateY : function(){
+      return anime.random(-150,150)
+    },
+    duration : 5000,
+    delay : anime.stagger(20) 
+  })
+
+  .add({
+    rotate: 0,
+    translateX : 0,
+    translateY : 0,
+    duration : 5000,
+    delay : anime.stagger(20) 
+  })
+</script>
+
+
+
+
+    <!-- Card 6 -->
+    <div class="card card6 container h-80 bg-red-600 bg-gradient-to-br from-zinc-900 via-zinc-800 to-blue-700 rounded-3xl overflow-hidden px-8 py-12">
+      <div class="flex h-full flex-col justify-between relative">
+        <div class="text-2xl font-bold text-white">p5.js</div>
+        <div class="flex-1 mr-24 text-gray-400">
+          스케치북과도 같은 드로잉이 가능한 기능<br>
+          오른쪽 박스를 긁어 보세요
+        </div>
+        <div id='sketch-hidden-text' class="opacity-0 flex-1 mr-24 text-cyan-400 ease-in-out duration-1000">앗, 뭔가 바뀐거 같아.</div>
+        <a class="text-blue-400" href="https://textanime.bicute.repl.co" target="_blank">Let's Show ></a>
+        <div class="sketch-text absolute text-white text-5xl w-24 right-2 bottom-2 leading-10 pointer-events-none" id="sketch-holder">
+            <p id="sketch-innerText">반가워요</p>
+        </div>
+      </div>
+    </div>
+
+    <style>
+    canvas{
+      position:absolute;
+      bottom: 0;
+      right: 0;
+      width:100%;
+      height:100%;
+      z-index:20;
+      border-radius: 1em;
+      transform: translate(8%, 14%);
+      mix-blend-mode: screen;
+  }
+
+  </style>
+
+<script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+<script>
+  let $card6 = document.querySelector('.card6');
+  let $sketchInnerText = document.getElementById('sketch-innerText')
+  let innerArr = ['반가워요','감사해요','고마워요','비밀이야','재밌어요','즐거워요','꽝입니다']
+  $card6.addEventListener('mouseleave',function(){
+    background(255);
+    $sketchInnerText.innerText = innerArr[Math.floor(Math.random()*innerArr.length)]
+    document.getElementById('sketch-hidden-text').classList.replace('opacity-0','opacity-100');
+  
+    let hideTimer = setTimeout(() => {
+      document.getElementById('sketch-hidden-text').classList.replace('opacity-100','opacity-0');
+    }, 5000);
+  })
+
+  console.log($sketchInnerText)
+  function setup(){
+    var canvas = createCanvas(130, 130);
+    canvas.parent('sketch-holder');
+    background(255);
+  }
+
+  function draw(){
+    strokeWeight(25);
+    if(mouseIsPressed === true){
+      line(mouseX, mouseY, pmouseX, pmouseY)
+    }
+  }
+</script>
+
+
+
+  </div>
+
+
+  <div class="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-12 mt-12">
+
+    <!-- mini Card 1 -->
+    <!-- <div class="card container min-h-40 lg:h-80 bg-red-600 bg-gradient-to-br from-zinc-900 via-zinc-800 to-blue-700 rounded-3xl overflow-hidden px-4 lg:px-8 py-6 lg:py-12">
+      <div class="flex h-full flex-col justify-between relative">
+        <div class="text-2xl font-bold text-white">Title</div>
+        <div class="flex-1 mr-12 lg:mr-24 text-gray-400">For, Set, Splice, includes</div>
+        <a class="text-blue-400" href="https://numberbaseball.bicute.repl.co/">Let's Play ></a>
+      </div>
+    </div> -->
+
+    <!-- mini Card 2 -->
+    <!-- <div class="card container min-h-40 lg:h-80 bg-red-600 bg-gradient-to-br from-zinc-900 via-zinc-800 to-blue-700 rounded-3xl overflow-hidden px-4 lg:px-8 py-6 lg:py-12">
+      <div class="flex h-full flex-col justify-between relative">
+        <div class="text-2xl font-bold text-white">반응속도 측정</div>
+        <div class="flex-1 mr-12 lg:mr-24 text-gray-400">Random, Array, Slice, Sort</div>
+        <a class="text-blue-400" href="https://readysetgo.bicute.repl.co/">Let's Play ></a>
+      </div>
+    </div> -->
+
+    <!-- mini Card 3 -->
+    <!-- <div class="card container min-h-40 lg:h-80 bg-red-600 bg-gradient-to-br from-zinc-900 via-zinc-800 to-blue-700 rounded-3xl overflow-hidden px-4 lg:px-8 py-6 lg:py-12">
+      <div class="flex h-full flex-col justify-between relative">
+        <div class="text-2xl font-bold text-white">계산기</div>
+        <div class="flex-1 mr-12 lg:mr-24 text-gray-400">Function, Switch</div>
+        <a class="text-blue-400" href="https://calculrator.bicute.repl.co/">Let's Play ></a>
+      </div>
+    </div> -->
+
+    <!-- mini Card 4 -->
+    <!-- <div class="card container min-h-40 lg:h-80 bg-red-600 bg-gradient-to-br from-zinc-900 via-zinc-800 to-blue-700 rounded-3xl overflow-hidden px-4 lg:px-8 py-6 lg:py-12">
+      <div class="flex h-full flex-col justify-between relative">
+        <div class="text-2xl font-bold text-white">끝말잇기 게임</div>
+        <div class="flex-1 mr-12 lg:mr-24 text-gray-400">DOM element control</div>
+        <a class="text-blue-400" href="https://wordrelaygame.bicute.repl.co/">Let's Play ></a>
+      </div>
+    </div> -->
+                
+  </div>
+
+  <div class="container mx-auto grid grid-cols-1 mt-12">
+  
+    <!-- footer Card 1 -->
+    <div
+      class="container min-h-8 bg-gradient-to-br from-zinc-900 via-zinc-800 to-blue-700 rounded-3xl overflow-hidden px-8 py-6">
+      <div class="flex h-full justify-between">
+        <a class="text-blue-400" href="../index.html">포트폴리오로 돌아가기</a>
+  
+      </div>
+    </div>
+  
+  </div>
+
+<script type="text/javascript" src="../js/vanilla-tilt.js"></script>
+<script>
+  VanillaTilt.init(document.querySelectorAll(".card"),{
+    reverse: true,
+    max: 15,
+    speed: 500,
+    glare: true,
+    transition: true,
+    "max-glare": 0.1,
+  })
+</script>
+
+
+</body>
+</html>
