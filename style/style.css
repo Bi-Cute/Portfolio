@@ -830,6 +830,7 @@ h3.my-profession {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   /* column-gap: .75rem; */
 }
 
@@ -1084,6 +1085,12 @@ h3.my-profession {
   }
   .portfolio__pop-img {
     width: 100%;  
+  }
+  .portfolio__item {
+    flex: 0 0 48%
+  }
+  .portfolio__item:nth-child(1) {
+    flex: 0 0 96%
   }
 }
 
