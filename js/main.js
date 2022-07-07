@@ -3,8 +3,7 @@
 
 /* ===== typing animation ===== */
 let typed = new Typed(".typing", {
-  strings: ["", "HTML", "CSS", "JavaScript", "React", "TailwindCSS", "Blog",
-    "Animation", "AdobeXD", "Affinity Photo"
+  strings: ["", "Product Manager", "Designer", "Programmer", "Publisher", "Marketer "
 ],
   typeSpeed: 100,
   BackSpeed: 60,

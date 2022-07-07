@@ -1,5 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@200;300;400;500;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@200;300;400;500;600&display=swap');
+
+* {
+  font-family: 'Kosugi Maru', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
 
 :root {
   --bg-black-900: #f2f2fc;
@@ -28,6 +35,7 @@ body {
   outline: none;
   text-decoration: none;
   box-sizing: border-box;
+  word-break: keep-all;
 }
 
 ::before, ::after {
@@ -191,7 +199,7 @@ ul {
 }
 
 .aside .logo a span {
-  font-family: 'Clicker', 'Noto Sans KR', cursive ;
+  font-family: 'Noto Sans KR', cursive ;
   font-size: 40px;
 }
 
@@ -313,10 +321,11 @@ ul {
 h3.hello {
   font-size : 28px;
   margin: 15px 0;
+  word-break: keep-all;
 }
 
 h3.hello span {
-  font-family: 'Clicker', 'Noto Sans KR', cursive;
+  font-family: 'Noto Sans KR', cursive;
   font-size: 30px;
   font-weight: 700; 
   color: var(--skin-color);
@@ -1095,3 +1104,25 @@ h3.my-profession {
 }
 
 
+
+@font-face {
+  font-family: "BiCute Round";
+  font-style: normal;
+  font-weight: 400;
+  src: local("※"), 
+  url(../font/TmoneyRoundWindRegular.woff2) format("woff2"), 
+  url(../font/TmoneyRoundWindRegular.woff) format("woff"), 
+  url(../font/TmoneyRoundWindRegular.ttf) format("fft"); 
+  font-display: swap
+}
+
+@font-face {
+  font-family: "BiCute Round";
+  font-style: normal;
+  font-weight: 700;
+  src: local("※"), 
+  url(../font/TmoneyRoundWind-ExtraBoldA1.woff2) format("woff2"), 
+  url(../font/TmoneyRoundWind-ExtraBoldA1.woff) format("woff"), 
+  url(../font/TmoneyRoundWind-ExtraBoldA1.ttf) format("fft"); 
+  font-display: swap
+}
