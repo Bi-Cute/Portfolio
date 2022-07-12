@@ -3,6 +3,10 @@ const styleSwitcherToggler = document.querySelector(".style-switcher-toggler");
 const styleSwitcher = document.querySelector(".style-switcher");
 
 styleSwitcherToggler.addEventListener("click", () => {
+  if (navTogglerBtn.classList.contains("open")) {
+    aside.classList.remove("open");
+    navTogglerBtn.classList.remove("open");
+  }
   styleSwitcher.classList.toggle("open");
 })
 
