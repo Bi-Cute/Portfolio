@@ -34,13 +34,13 @@ function setActiveStyle(color) {
       else {
         style.setAttribute("disabled", "true");
       }
-
     })
-
   }
+  styleSwitcher.classList.remove("open");
 }  
+
+
 // if (localStorage.getItem("color") === style.getAttribute("title"))
-      
 // })
 
 /* ===== theme light and dark mode ===== */ 
@@ -76,6 +76,7 @@ function themeSet() {
   }
 }
 themeSet();
+
 
 function colorSet() {
   for (let i = 0; i < alternateStyle.length; i++) {

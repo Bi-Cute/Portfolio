@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.1.5"
+  },
+  "dependencies": {
+    "shuffle-text": "^0.3.6"
   }
 }
